@@ -35,17 +35,12 @@
 
 <div id="page-wrapper" class="header-child-wrapper">
 
-
-
-
-<?php 
-
-if ( is_front_page() && !is_home() ) : ?> <!-- If homepage displays as > static page -->
+<?php if ( is_front_page() && !is_home() ) : ?> <!-- If homepage displays as > static page -->
 
   <!-- Banner -->
   	<?php $post_img_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'thumbnail' ); ?>
   
-	<header id="header" style="background: url('<?php echo $post_img_url ?>')">
+	<div id="header" style="background: url('<?php echo $post_img_url ?>')">
 
 		<div class="inner">
 
@@ -88,8 +83,6 @@ if ( is_front_page() && !is_home() ) : ?> <!-- If homepage displays as > static 
 				) );
 		?>
 
-	</header><!-- #masthead -->
+	</div><!-- #masthead -->
 
 <?php endif; ?>
-
-	<div id="content" class="site-content">
