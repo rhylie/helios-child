@@ -32,24 +32,17 @@ get_header();
 
 
 
-<?php
-
-	$args = array(
-	  'public'   => true,
-	  '_builtin' => false
-	  
+<?php 
+	$args=array(
+	  'name'  => 'topics'
 	);
-
-	$output = 'names'; // or objects
-	$operator = 'and'; // 'and' or 'or'
-	$taxonomies = get_taxonomies( $args, $output, $operator );
-
-	if ( $taxonomies ) {
-	  foreach ( $taxonomies  as $taxonomy ) {
-	    echo '<h5 class="taxonomy_custom_title">' . $taxonomy . '</h5>';
+	$output = 'objects'; // or names
+	$taxonomies=get_taxonomies($args,$output); 
+	if  ($taxonomies) {
+	  foreach ($taxonomies  as $taxonomy ) {
+	    echo '<p>' . $taxonomy->name . '</p>';
 	  }
-	}
-
+	}  
 ?>
 
 

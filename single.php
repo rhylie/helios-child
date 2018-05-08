@@ -21,9 +21,22 @@ get_header();
 			the_content();
 
 			// Render the particular terms assiosiated with the post
-			// More information and examples: 
-			// -> https://codex.wordpress.org/Function_Reference/get_the_term_list
-			echo get_the_term_list( $post->ID, 'topics', 'Topic Term: ', ', ', '' );
+			// More info and code examples @ https://codex.wordpress.org/Function_Reference/get_the_term_list
+			echo get_the_term_list( $post->ID, 'topics', 'Topic taxonomy terms: ', ', ', '' );
+
+			if (get_the_tag_list()) :
+				echo get_the_tag_list('<p>Tags: ',', ','</p>');	
+			endif;
+
+
+			// TODO: Clunky but proves the point.
+			$cdescriptions = get_the_terms($post->ID ,'topics');
+			foreach($cdescriptions as $cdescription){
+			    $my_custom_description = $cdescription->description;
+			}
+
+			echo '<p>' . ' Taxonomy description: ' . $my_custom_description . '</p>';
+
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
