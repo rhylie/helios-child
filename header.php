@@ -85,4 +85,7 @@
 
 	</div><!-- #masthead -->
 
+<!-- TODO: NEED TO WRITE HEADER ELSE STATEMENT FOR ! is_front_page() -->
+
+
 <?php endif; ?>

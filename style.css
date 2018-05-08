@@ -10,3 +10,32 @@ Template: helios
 
 
 @import url('../helios/style.css'); 
+
+
+.single-child, 
+.archive-template, 
+.taxonomy-topics-template {
+    padding: 4.5em;
+}
+
+.entry-footer > span {
+    border-right: 1px solid #959595;
+    padding: 0 5px 0 5px;
+    margin
+}
+
+
+.taxonomy_custom_title {
+	text-transform: uppercase;
+	font-size: 18px;
+	color: purple;
+	font-weight: bold;
+	text-decoration: underline;
+	text-align: center;
+	margin: 2.5em 0;
+	padding: 1.5em;
+}
+
+#comments {
+    margin-top: 1em;
+}

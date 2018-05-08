@@ -30,6 +30,29 @@ get_header();
 		</div><!-- /.ends reel -->
 	</section><!-- /.ends carousel -->
 
+
+
+<?php
+
+	$args = array(
+	  'public'   => true,
+	  '_builtin' => false
+	  
+	);
+
+	$output = 'names'; // or objects
+	$operator = 'and'; // 'and' or 'or'
+	$taxonomies = get_taxonomies( $args, $output, $operator );
+
+	if ( $taxonomies ) {
+	  foreach ( $taxonomies  as $taxonomy ) {
+	    echo '<h5 class="taxonomy_custom_title">' . $taxonomy . '</h5>';
+	  }
+	}
+
+?>
+
+
 <?php
 
 get_footer();
