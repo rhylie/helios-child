@@ -52,3 +52,9 @@ Template: helios
 	width: 100%;
 	margin: 0 0 4em 0;
 }
+
+.featured_home_img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}

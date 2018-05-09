@@ -19,26 +19,46 @@ get_header();
 	<section id="banner">
 		<header id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<?php 
-				$id=206; 
-				$post = get_post($id);
-				$content = apply_filters('the_content', $post->post_content); 
-				echo $content;  
+			if( have_posts() ) :
+				if ( is_front_page() && ! is_home() ) :
+					while ( have_posts() ) :
+						the_post();
+						the_content();
+					endwhile;
+				else :
+					// display content for home.php
+				endif;
 			?>
+			<?php endif; ?>
 		</header>
 	</section>
 
 <!-- Carousel -->
 	<section class="carousel">
 		<div class="reel">
-			<?php get_template_part( 'template-parts/post-gallery', 'content' ); ?>
+			<?php 
+			if ( have_posts() ) : 
+				if ( is_front_page() && ! is_home() ) :
+					get_template_part( 'template-parts/post-gallery', 'content' ); 
+				else :
+					// render something else if its not the front-page.php
+				endif; 
+				?>
+			<?php endif;?>
 		</div><!-- /.ends reel -->
 	</section><!-- /.ends carousel -->
 
 <!-- Main -->
 	<div class="wrapper style2">
-
 		<article id="main" class="container special">
-			<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+			<?php // Display the featured banner image on front-page.php
+			$image = get_field('home_featured_image');
+			if( ! empty($image) ): ?>
+				<div class="image featured">
+					<img class="featured_home_img" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+				</div>
+			<?php endif; ?>
+
 			<header>
 				<h2><?php the_field('home_featured_heading')?></h2>
 				<p><?php the_field('home_featured_intro')?></p>
@@ -48,7 +68,6 @@ get_header();
 				<a href="#" class="button">Continue Reading</a>
 			</footer>
 		</article>
-
 	</div>
 
 
