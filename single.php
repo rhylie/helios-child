@@ -13,10 +13,12 @@ get_header();
 	<div id="primary" class="content-area single-child">
 		<main id="main" class="site-main">
 
+
 		<?php
 		while ( have_posts() ) :
 			the_post();
-
+		
+			helios_post_thumbnail();
 			the_title('<h2>', '</h2>');
 			the_content();
 

@@ -39,3 +39,16 @@ Template: helios
 #comments {
     margin-top: 1em;
 }
+
+
+.post-thumbnail > img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#features > article a {
+	display: block;
+	width: 100%;
+	margin: 0 0 4em 0;
+}

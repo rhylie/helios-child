@@ -10,7 +10,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( '4u 12u(mobile) special' ); ?>>
-	<a href=""><?php helios_post_thumbnail(); ?></a>
+	<a class="image featured" href=""><?php helios_post_thumbnail(); ?></a>
 	<header>
 		<?php the_title( '<h3 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 	</header>
