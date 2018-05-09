@@ -62,20 +62,19 @@ get_header();
 
 <!-- Features -->
 	<div class="wrapper style1">
-
 		<section id="features" class="container special">
 			<header>
 				<!-- TODO: Need to figure out a way to dynamically render cat name -->
 				<h2>Morbi ullamcorper et varius leo lacus</h2>
 				<p>Ipsum volutpat consectetur orci metus consequat imperdiet duis integer semper magna.</p>
 			</header>
-			
+
 			<div class="row">
-				<?php helios_display_cat_posts(); ?><!-- Include helios custom function -->
+				<?php helios_display_cat_posts(); ?><!-- For more info locate in.. functions.php -->
 			</div>
 		</section>
 
-	</div>
+	</div><!-- /.ends style1 -->
 
 
 <?php
