@@ -22,7 +22,7 @@ get_header();
 
 			// Render the particular terms assiosiated with the post
 			// More info and code examples @ https://codex.wordpress.org/Function_Reference/get_the_term_list
-			echo get_the_term_list( $post->ID, 'topics', 'Topic taxonomy terms: ', ', ', '' );
+			echo get_the_term_list( $post->ID, 'topics', 'Taxonomy terms: ', ', ', '' );
 
 			if (get_the_tag_list()) :
 				echo get_the_tag_list('<p>Tags: ',', ','</p>');	
@@ -30,9 +30,9 @@ get_header();
 
 
 			// TODO: Clunky but proves the point.
-			$cdescriptions = get_the_terms($post->ID ,'topics');
-			foreach($cdescriptions as $cdescription){
-			    $my_custom_description = $cdescription->description;
+			$tax_terms = get_the_terms($post->ID ,'topics');
+			foreach($tax_terms as $tax_term){
+			    $my_custom_description = $tax_term->description;
 			}
 
 			echo '<p>' . ' Taxonomy description: ' . $my_custom_description . '</p>';
